@@ -7,6 +7,8 @@ description: Crie, revise, edite e gerencie templates de WhatsApp do Frame Conex
 
 Use as ferramentas do MCP `https://frameconexa.com/mcp`, autenticado com a chave `fc_` da conta em `Authorization: Bearer`. A chave vem do modal **Templates → Criar com IA** ou de **Configurações → API**. Não use tokens de sessão do painel ou credenciais da Meta. Nunca envie a chave ao baixar esta skill ou consultar documentação pública.
 
+As chaves novas do modal de templates expiram em **1 hora** por padrão; a opção **Gerar chave de longa duração** emite uma chave válida por **2 meses de calendário**. O prompt informa o vencimento absoluto. Depois dele, a API/MCP recusa a chave e ela some do painel. Remova a credencial e a configuração desse MCP dos seus arquivos locais quando detectar o vencimento, somente se ainda usarem a chave vencida; peça uma nova chave ao usuário, sem tentar renovar o acesso por conta própria. A expiração invalida o segredo, mas não apaga mensagens antigas do histórico da conversa. Uma chave existente informada manualmente mantém seu prazo original.
+
 ## Conectar e identificar a conta
 
 Use a configuração pessoal do cliente e preserve os outros servidores. O transporte é Streamable HTTP, sem OAuth próprio. Codex aceita `mcp_servers.frame_conexa` com `url` e `http_headers.Authorization` ou `bearer_token_env_var`; Claude Code aceita um servidor HTTP no escopo pessoal com header Bearer. Guarde segredos fora de repositórios e de logs. A chave da API tem acesso à conta, não apenas aos templates; um filtro de ferramentas no cliente não restringe a credencial no servidor.
