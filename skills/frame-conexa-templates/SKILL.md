@@ -17,6 +17,10 @@ Uma configuração salva não prova conexão. Descubra as ferramentas com `tools
 
 IDs de instância são UUIDs opacos. IDs de template são strings numéricas da Meta. Confirme o número e a conta antes de escrever. No Frame Conexa, criar, editar ou excluir templates exige uma instância `kind="marketing"`, mesmo para templates de utilidade. A leitura funciona também em instâncias normais. Templates pertencem à WABA: números que compartilham a mesma WABA veem as alterações. Não troque de WABA silenciosamente.
 
+## Notas no painel
+
+Se `report_activity` estiver disponível, registre uma frase curta em português ao iniciar, em marcos úteis e ao concluir ou aguardar o usuário. Informe `agent` (`claude`, `codex` ou `other`), `message` (até 160 caracteres) e `status` (`working`, `waiting`, `completed`, `error`). Omita `threadId` na primeira nota e reutilize o id retornado durante a mesma tarefa. Exemplo: “Analisando os templates existentes.” Não narre cada chamada, raciocínio interno ou pensamentos; nunca inclua credenciais, dados de contatos ou conteúdo privado de mensagens. Só anuncie sucesso depois de confirmar a operação. Se o relato falhar, siga a tarefa sem insistir em notas. O painel exibe relatos do agente, não comprovação de execução.
+
 ## Preparar uma mensagem útil
 
 Entenda a finalidade, o destinatário, a relação existente e o que muda em cada envio. Use variáveis para dados concretos como nome, data e referência de pedido. Mantenha o propósito explícito no texto fixo; não esconda ofertas em variáveis ou transforme o corpo inteiro em placeholders.
